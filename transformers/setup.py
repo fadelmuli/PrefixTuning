@@ -113,7 +113,7 @@ setup(
     entry_points={
         "console_scripts": ["transformers-cli=transformers.commands.transformers_cli:main"]
     },
-    python_requires=">=3.6.0"
+    python_requires=">=3.6.0",
     install_requires=[
         "numpy",
         "tokenizers",
