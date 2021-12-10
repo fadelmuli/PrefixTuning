@@ -736,7 +736,7 @@ def generic_train(
 
     if checkpoint_callback is None:
         checkpoint_callback = pl.callbacks.ModelCheckpoint(
-            filepath=args.output_dir, prefix="checkpoint", monitor="val_loss", mode="min", save_top_k=1
+            filename=args.output_dir, prefix="checkpoint", monitor="val_loss", mode="min", save_top_k=1
         )
     # add custom checkpoints
     # LISA
