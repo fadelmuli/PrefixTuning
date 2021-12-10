@@ -173,7 +173,7 @@ from .modeling_roberta import (
     RobertaModel,
 )
 from .modeling_t5 import T5ForConditionalGeneration, T5Model
-from .modeling_mT5 import MT5ForConditionalGeneration, MT5Model
+from .modeling_mt5 import MT5ForConditionalGeneration, MT5Model
 from .modeling_transfo_xl import TransfoXLLMHeadModel, TransfoXLModel
 from .modeling_xlm import (
     XLMForMultipleChoice,
