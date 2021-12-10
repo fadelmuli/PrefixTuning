@@ -73,6 +73,7 @@ from .tokenization_longformer import LongformerTokenizer, LongformerTokenizerFas
 from .tokenization_lxmert import LxmertTokenizer, LxmertTokenizerFast
 from .tokenization_marian import MarianTokenizer
 from .tokenization_mbart import MBartTokenizer
+from .tokenization_mbart50 import MBart50Tokenizer
 from .tokenization_mobilebert import MobileBertTokenizer, MobileBertTokenizerFast
 from .tokenization_openai import OpenAIGPTTokenizer, OpenAIGPTTokenizerFast
 from .tokenization_pegasus import PegasusTokenizer
@@ -102,6 +103,7 @@ TOKENIZER_MAPPING = OrderedDict(
         (CamembertConfig, (CamembertTokenizer, None)),
         (PegasusConfig, (PegasusTokenizer, None)),
         (MBartConfig, (MBartTokenizer, None)),
+        (MBart50Config, (MBart50Tokenizer, None)),
         (XLMRobertaConfig, (XLMRobertaTokenizer, None)),
         (MarianConfig, (MarianTokenizer, None)),
         (BartConfig, (BartTokenizer, BartTokenizerFast)),
