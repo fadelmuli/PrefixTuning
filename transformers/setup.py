@@ -98,8 +98,8 @@ extras["dev"] = extras["testing"] + extras["quality"] + extras["ja"] + ["scikit-
 
 setup(
     name="transformers",
-    version="4.13.0.dev0",  # expected format is one of x.y.z.dev0, or x.y.z.rc1 or x.y.z (no to dashes, yes to dots)
-    author="Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Sam Shleifer, Patrick von Platen, Sylvain Gugger, Suraj Patil, Stas Bekman, Google AI Language Team Authors, Open AI team Authors, Facebook AI Authors, Carnegie Mellon University Authors",
+    version="3.2.0",
+    author="Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Sam Shleifer, Patrick von Platen, Sylvain Gugger, Google AI Language Team Authors, Open AI team Authors, Facebook AI Authors, Carnegie Mellon University Authors",
     author_email="thomas@huggingface.co",
     description="State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch",
     long_description=open("README.md", "r", encoding="utf-8").read(),
@@ -109,14 +109,9 @@ setup(
     url="https://github.com/huggingface/transformers",
     package_dir={"": "src"},
     packages=find_packages("src"),
-    extras_require=extras,
-    entry_points={
-        "console_scripts": ["transformers-cli=transformers.commands.transformers_cli:main"]
-    },
-    python_requires=">=3.6.0",
     install_requires=[
         "numpy",
-        "tokenizers",
+        "tokenizers == 0.8.1.rc2",
         # dataclasses for Python versions that don't have it
         "dataclasses;python_version<'3.7'",
         # utilities from PyPA to e.g. compare versions
@@ -126,19 +121,19 @@ setup(
         # for downloading models over HTTPS
         "requests",
         # progress bars in model download and training scripts
-        "tqdm",
+        "tqdm >= 4.27",
         # for OpenAI GPT
-        "regex",
+        "regex != 2019.12.17",
         # for XLNet
         "sentencepiece != 0.1.92",
         # for XLM
         "sacremoses",
-        "requests",
-        "pyyaml",
-        "huggingface-hub",
-        "filelock",
-        "importlib-metadata,
-    ]
+    ],
+    extras_require=extras,
+    entry_points={
+        "console_scripts": ["transformers-cli=transformers.commands.transformers_cli:main"]
+    },
+    python_requires=">=3.6.0",
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Intended Audience :: Developers",
@@ -149,60 +144,6 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.6",
         "Programming Language :: Python :: 3.7",
-        "Programming Language :: Python :: 3.8",
-        "Programming Language :: Python :: 3.9",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
     ],
 )
-
-# setup(
-#     name="transformers",
-#     version="3.2.0",
-#     author="Thomas Wolf, Lysandre Debut, Victor Sanh, Julien Chaumond, Sam Shleifer, Patrick von Platen, Sylvain Gugger, Google AI Language Team Authors, Open AI team Authors, Facebook AI Authors, Carnegie Mellon University Authors",
-#     author_email="thomas@huggingface.co",
-#     description="State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch",
-#     long_description=open("README.md", "r", encoding="utf-8").read(),
-#     long_description_content_type="text/markdown",
-#     keywords="NLP deep learning transformer pytorch tensorflow BERT GPT GPT-2 google openai CMU",
-#     license="Apache",
-#     url="https://github.com/huggingface/transformers",
-#     package_dir={"": "src"},
-#     packages=find_packages("src"),
-#     install_requires=[
-#         "numpy",
-#         "tokenizers == 0.8.1.rc2",
-#         # dataclasses for Python versions that don't have it
-#         "dataclasses;python_version<'3.7'",
-#         # utilities from PyPA to e.g. compare versions
-#         "packaging",
-#         # filesystem locks e.g. to prevent parallel downloads
-#         "filelock",
-#         # for downloading models over HTTPS
-#         "requests",
-#         # progress bars in model download and training scripts
-#         "tqdm >= 4.27",
-#         # for OpenAI GPT
-#         "regex != 2019.12.17",
-#         # for XLNet
-#         "sentencepiece != 0.1.92",
-#         # for XLM
-#         "sacremoses",
-#     ],
-#     extras_require=extras,
-#     entry_points={
-#         "console_scripts": ["transformers-cli=transformers.commands.transformers_cli:main"]
-#     },
-#     python_requires=">=3.6.0",
-#     classifiers=[
-#         "Development Status :: 5 - Production/Stable",
-#         "Intended Audience :: Developers",
-#         "Intended Audience :: Education",
-#         "Intended Audience :: Science/Research",
-#         "License :: OSI Approved :: Apache Software License",
-#         "Operating System :: OS Independent",
-#         "Programming Language :: Python :: 3",
-#         "Programming Language :: Python :: 3.6",
-#         "Programming Language :: Python :: 3.7",
-#         "Topic :: Scientific/Engineering :: Artificial Intelligence",
-#     ],
-# )
