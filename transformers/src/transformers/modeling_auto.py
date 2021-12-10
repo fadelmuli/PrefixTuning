@@ -45,6 +45,7 @@ from .configuration_auto import (
     RetriBertConfig,
     RobertaConfig,
     T5Config,
+    mT5Config,
     TransfoXLConfig,
     XLMConfig,
     XLMRobertaConfig,
@@ -172,6 +173,7 @@ from .modeling_roberta import (
     RobertaModel,
 )
 from .modeling_t5 import T5ForConditionalGeneration, T5Model
+from .modeling_mT5 import MT5ForConditionalGeneration, MT5Model
 from .modeling_transfo_xl import TransfoXLLMHeadModel, TransfoXLModel
 from .modeling_xlm import (
     XLMForMultipleChoice,
@@ -207,6 +209,7 @@ logger = logging.get_logger(__name__)
 MODEL_MAPPING = OrderedDict(
     [
         (RetriBertConfig, RetriBertModel),
+        (MT5Config, MT5Model),
         (T5Config, T5Model),
         (DistilBertConfig, DistilBertModel),
         (AlbertConfig, AlbertModel),
@@ -239,6 +242,7 @@ MODEL_FOR_PRETRAINING_MAPPING = OrderedDict(
     [
         (LayoutLMConfig, LayoutLMForMaskedLM),
         (RetriBertConfig, RetriBertModel),
+        (MT5Config, MT5ForConditionalGeneration),
         (T5Config, T5ForConditionalGeneration),
         (DistilBertConfig, DistilBertForMaskedLM),
         (AlbertConfig, AlbertForPreTraining),
@@ -265,6 +269,7 @@ MODEL_FOR_PRETRAINING_MAPPING = OrderedDict(
 MODEL_WITH_LM_HEAD_MAPPING = OrderedDict(
     [
         (LayoutLMConfig, LayoutLMForMaskedLM),
+        (MT5Config, MT5ForConditionalGeneration),
         (T5Config, T5ForConditionalGeneration),
         (DistilBertConfig, DistilBertForMaskedLM),
         (AlbertConfig, AlbertForMaskedLM),
@@ -333,6 +338,7 @@ MODEL_FOR_MASKED_LM_MAPPING = OrderedDict(
 
 MODEL_FOR_SEQ_TO_SEQ_CAUSAL_LM_MAPPING = OrderedDict(
     [
+        (MT5Config, MT5ForConditionalGeneration),
         (T5Config, T5ForConditionalGeneration),
         (PegasusConfig, PegasusForConditionalGeneration),
         (MarianConfig, MarianMTModel),
