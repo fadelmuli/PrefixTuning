@@ -14,8 +14,8 @@
 # limitations under the License.
 """ PyTorch mT5 model. """
 
-from ...utils import logging
-from ..t5.modeling_t5 import T5ForConditionalGeneration, T5Model
+from .utils import logging
+from .modeling_t5 import T5ForConditionalGeneration, T5Model
 from .configuration_mt5 import MT5Config
 
 
