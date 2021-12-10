@@ -87,7 +87,7 @@ ALL_PRETRAINED_CONFIG_ARCHIVE_MAP = dict(
 CONFIG_MAPPING = OrderedDict(
     [
         ("retribert", RetriBertConfig),
-        ("mt5", MT5Config)
+        ("mt5", MT5Config),
         ("t5", T5Config),
         ("mobilebert", MobileBertConfig),
         ("distilbert", DistilBertConfig),
