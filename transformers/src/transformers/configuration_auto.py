@@ -36,6 +36,7 @@ from .configuration_longformer import LONGFORMER_PRETRAINED_CONFIG_ARCHIVE_MAP, 
 from .configuration_lxmert import LXMERT_PRETRAINED_CONFIG_ARCHIVE_MAP, LxmertConfig
 from .configuration_marian import MarianConfig
 from .configuration_mbart import MBART_PRETRAINED_CONFIG_ARCHIVE_MAP, MBartConfig
+from .configuration_mt5 import MT5Config
 from .configuration_mobilebert import MobileBertConfig
 from .configuration_openai import OPENAI_GPT_PRETRAINED_CONFIG_ARCHIVE_MAP, OpenAIGPTConfig
 from .configuration_pegasus import PegasusConfig
@@ -86,6 +87,7 @@ ALL_PRETRAINED_CONFIG_ARCHIVE_MAP = dict(
 CONFIG_MAPPING = OrderedDict(
     [
         ("retribert", RetriBertConfig),
+        ("mt5", MT5Config)
         ("t5", T5Config),
         ("mobilebert", MobileBertConfig),
         ("distilbert", DistilBertConfig),
@@ -122,6 +124,7 @@ CONFIG_MAPPING = OrderedDict(
 MODEL_NAMES_MAPPING = OrderedDict(
     [
         ("retribert", "RetriBERT"),
+        ("mt5", "mT5"),
         ("t5", "T5"),
         ("mobilebert", "MobileBERT"),
         ("distilbert", "DistilBERT"),
