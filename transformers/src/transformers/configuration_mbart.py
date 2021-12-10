@@ -23,9 +23,15 @@ logger = logging.get_logger(__name__)
 MBART_PRETRAINED_CONFIG_ARCHIVE_MAP = {
     "facebook/mbart-large-en-ro": "https://s3.amazonaws.com/models.huggingface.co/bert/facebook/mbart-large-en-ro/config.json",
     "facebook/mbart-large-cc25": "https://s3.amazonaws.com/models.huggingface.co/bert/facebook/mbart-large-cc25/config.json",
+    "facebook/mbart-large-50": "https://s3.amazonaws.com/models.huggingface.co/bert/facebook/mbart-large-50/config.json"
 }
 
 
 class MBartConfig(BartConfig):
     model_type = "mbart"
     """See real config values at https://s3.amazonaws.com/models.huggingface.co/bert/facebook/mbart-large-en-ro/config.json."""
+
+class MBart50Config(MBartConfig):
+    model_type = "mbart50"
+    """See real config values at https://s3.amazonaws.com/models.huggingface.co/bert/facebook/mbart-large-en-ro/config.json."""
+
