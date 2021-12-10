@@ -45,7 +45,7 @@ from .configuration_auto import (
     RetriBertConfig,
     RobertaConfig,
     T5Config,
-    mT5Config,
+    MT5Config,
     TransfoXLConfig,
     XLMConfig,
     XLMRobertaConfig,
