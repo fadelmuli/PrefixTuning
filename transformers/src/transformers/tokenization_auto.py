@@ -103,7 +103,6 @@ TOKENIZER_MAPPING = OrderedDict(
         (CamembertConfig, (CamembertTokenizer, None)),
         (PegasusConfig, (PegasusTokenizer, None)),
         (MBartConfig, (MBartTokenizer, None)),
-        (MBart50Config, (MBart50Tokenizer, None)),
         (XLMRobertaConfig, (XLMRobertaTokenizer, None)),
         (MarianConfig, (MarianTokenizer, None)),
         (BartConfig, (BartTokenizer, BartTokenizerFast)),
@@ -219,6 +218,9 @@ class AutoTokenizer:
 
         if "bert-base-japanese" in str(pretrained_model_name_or_path):
             return BertJapaneseTokenizer.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
+        
+        if "mbart-large-50" in str(pretrained_model_name_or_path):
+            return MBart50Tokenizer.from_pretrained(pretrained_model_name_or_path, *inputs, **kwargs)
 
         use_fast = kwargs.pop("use_fast", False)
 
